@@ -1,0 +1,125 @@
+
+body{
+background-color:#e6fefd;
+padding:25px;
+font-size:150%;
+}
+
+h1{
+color:aqua;
+padding:25px;
+background:black;
+width:fit-content;
+font-family:cursive;
+font-size:200%;
+text-align:center;
+margin:0 auto;
+}
+
+
+h3 {
+  color: white;
+  padding: 25px;
+  background: black;
+  width: fit-content;
+  font-family: cursive;
+  font-size: 100%;
+  text-shadow: 0 0 10px black, 0 0 20px blue;
+  transition: text-shadow 0.5s ease-in-out;
+}
+
+h3:hover {
+  text-shadow: 0 0 20px aqua, 0 0 40px blue;
+}
+
+font{font-weight:bold;}
+
+p.special{line-height:150%; border-style:double;}
+
+
+.card {
+  background-color: #994ccc;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin: 40px auto;
+  width: 80%;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.glow-thorns {
+  position: relative;
+  border: 8px solid white;
+  border-radius: 12px;
+  box-shadow: 0 0 40px white;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.glow-thorns::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    white,
+    transparent,
+    white,
+    transparent
+  );
+  border-radius: 50%;
+  filter: blur(15px);
+  z-index: -1;
+  animation: rotateGlow 4s linear infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px white, 0 0 40px white;
+  }
+  50% {
+    box-shadow: 0 0 60px white, 0 0 80px white;
+  }
+}
+
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.shimmer-text {
+  position: relative;
+  font-weight: bold;
+  background: linear-gradient(
+    to right,
+    red 20%,
+    black 40%,
+    red 60%,
+    black 80%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s linear infinite;
+}
+
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
