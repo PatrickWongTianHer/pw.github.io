@@ -1,0 +1,95 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - My University</title>
+  <link rel="stylesheet" href="project.css">
+ </head>
+<body>
+<header>
+  <h1>My International University</h1>
+</header>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li>
+      <a href="courses.html">Courses</a>
+      <ul>
+        <li><a href="accounting.html">Accounting</a></li>
+        <li><a href="engineering.html">Engineering</a></li>
+      </ul>
+    </li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+<section class="hero">
+  <div class="hero-overlay">
+    <h2>Welcome to My International University</h2>
+    <p>Shape your future with world-class education.</p>
+  </div>
+</section>
+</nav>
+<main>
+  <h2>Welcome to My International University</h2><br>
+  <h4>Explore our world-class programs in Accounting, Engineering, and more. Start your academic journey with us today!</h4>
+</main>
+<section class="testimonial-section">
+  <h2>What Our Students Say</h2>
+  <div class="testimonial-slider">
+<div class="testimonial-overlay">
+    <div class="testimonial active">
+      <h4>"This university changed my life!"</h4>
+      <h4>- Aisyah, Accounting Graduate</h4>
+    </div>
+    <div class="testimonial">
+      <h4>"Excellent lecturers and a beautiful campus."</h4>
+      <h4>- Amir, Engineering Student</h4>
+    </div>
+    <div class="testimonial">
+      <h4>"The support from staff made my journey smooth."</h4>
+      <h4>- Sophia, International Student</h4>
+    </div>
+</div>
+    <button class="arrow left">&#10094;</button>
+    <button class="arrow right">&#10095;</button>
+  </div>
+</section>
+
+
+<footer>
+  <p>© 2025 My International University</p>
+</footer>
+<script>
+  let current = 0;
+  const testimonials = document.querySelectorAll(".testimonial");
+  const leftBtn = document.querySelector(".arrow.left");
+  const rightBtn = document.querySelector(".arrow.right");
+
+  function showTestimonial(index) {
+    testimonials.forEach(t => t.classList.remove("active"));
+    testimonials[index].classList.add("active");
+  }
+
+  leftBtn.addEventListener("click", () => {
+    current = (current - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(current);
+  });
+
+  rightBtn.addEventListener("click", () => {
+    current = (current + 1) % testimonials.length;
+    showTestimonial(current);
+  });
+
+  // Optional: auto-slide every 5s
+  setInterval(() => {
+    current = (current + 1) % testimonials.length;
+    showTestimonial(current);
+  }, 5000);
+</script>
+
+
+</body>
+</html>
