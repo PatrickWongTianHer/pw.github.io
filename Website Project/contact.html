@@ -1,0 +1,102 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - My University</title>
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+<header>
+  <div style="text-align: center;">
+    <img src="tiger.png" alt="Southern Tiger Institute Logo" style="height: 80px; margin-bottom: 10px;">
+    <h1>Southern Tiger Institute</h1>
+    <p style="font-style: italic; font-size: 1em; color: #ddd;">
+      Powering the Future with Strength and Knowledge
+    </p>
+  </div>
+</header>
+<nav>
+  <ul>
+    <li><a href="indexTest.html">Home</a></li>
+    <li>
+      <a href="courses.html">Courses</a>
+      <ul>
+        <li><a href="accounting.html">Accounting</a></li>
+        <li><a href="engineering.html">Engineering</a></li>
+      </ul>
+    </li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="admission.html">Admission</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+<main>
+  <h2 style="text-align: center;">Register & Get in Touch</h2>
+  <div class="contact-container">
+    <div class="contact-info">
+      <h3>Southern Tiger Institute</h3>
+      <p>01, Jalan Ilmu 3 <br> Taman Horizon Hills <br> Johor Bahru, Johor, Malaysia</p>
+      <p><strong>Phone:</strong> +60 10-2862-760</p>
+      <p><strong>Email:</strong> info@southerntiger.edu.my</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.166848427073!2d103.7082381!3d1.5311399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da6fb56a23816b%3A0x9275c21f4fd39fbd!2sUniversiti%20Teknologi%20Malaysia!5e0!3m2!1sen!2smy!4v1719021730849!5m2!1sen!2smy" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="contact-form">
+      <form class="csimple-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Create a Password:</label>
+        <input type="password" id="password" name="password" required onkeyup="checkPasswordStrength()">
+        <small id="strengthMessage"></small>
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="8" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</main>
+<footer>
+<div class="footer-links">
+    <a href="indexTest.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="about.html">About</a>
+    <a href="admission.html">Admission</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="social-icons">
+    <a href="#"><img src="facebook.png" alt="Facebook"></a>
+    <a href="#"><img src="twitter.png" alt="Twitter"></a>
+    <a href="#"><img src="instagram.png" alt="Instagram"></a>
+  </div>
+<br>
+  <p>© 2025 Southern Tiger Institute</p>
+</footer>
+<script>
+function checkPasswordStrength() {
+  const password = document.getElementById("password").value;
+  const strengthMessage = document.getElementById("strengthMessage");
+
+  if (password.length < 6) {
+    strengthMessage.textContent = "Weak: Too short";
+    strengthMessage.style.color = "red";
+  } else if (password.match(/[A-Z]/) && password.match(/[0-9]/) && password.match(/[^A-Za-z0-9]/)) {
+    strengthMessage.textContent = "Strong Password";
+    strengthMessage.style.color = "green";
+  } else {
+    strengthMessage.textContent = "Medium: Add special characters and numbers";
+    strengthMessage.style.color = "orange";
+  }
+}
+</script>
+
+</body>
+</html>
